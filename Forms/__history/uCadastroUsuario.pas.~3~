@@ -1,0 +1,25 @@
+unit uCadastroUsuario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uModelCadastro, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.ExtCtrls;
+
+type
+  TfrmCadastroUsuario = class(TfrmModelCadastro)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastroUsuario: TfrmCadastroUsuario;
+
+implementation
+
+{$R *.dfm}
+
+end.

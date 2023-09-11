@@ -2,8 +2,18 @@
 <BorlandProject>
   <Transactions>
     <Transaction>2023/09/11 09:32:26.936,=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2023/09/11 09:33:25.202,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uPrincipal.pas=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2023/09/11 09:33:25.202,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uPrincipal.dfm=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2023/09/11 09:33:25.202,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uPrincipal.pas=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>2023/09/11 09:33:51.368,C:\Cursos\Delphi\Controle Tarefas Usuário\Controle_Tarefas.dproj=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>2023/09/11 09:38:54.184,=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:44:33.941,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uModelCadastro.pas=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:44:33.941,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uModelCadastro.dfm=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.dfm</Transaction>
+    <Transaction>2023/09/11 09:44:38.600,=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:44:49.514,=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:45:01.402,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uCadastroUsuario.pas=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:45:01.402,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uCadastroUsuario.dfm=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.dfm</Transaction>
+    <Transaction>2023/09/11 09:45:40.866,=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
+    <Transaction>2023/09/11 09:48:24.857,C:\Cursos\Delphi\Controle Tarefas Usuário\Banco\uDataModel.dfm=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.dfm</Transaction>
+    <Transaction>2023/09/11 09:48:24.857,C:\Cursos\Delphi\Controle Tarefas Usuário\Banco\uDataModel.pas=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

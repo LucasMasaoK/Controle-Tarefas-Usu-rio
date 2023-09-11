@@ -1,7 +1,7 @@
-object Form2: TForm2
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Sistema Controle Tarefas'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
@@ -10,5 +10,28 @@ object Form2: TForm2
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = menuPrincipal
+  Position = poScreenCenter
+  WindowState = wsMaximized
   TextHeight = 15
+  object menuPrincipal: TMainMenu
+    Left = 248
+    Top = 184
+    object Sistema1: TMenuItem
+      Caption = 'Sistema'
+      object Sair1: TMenuItem
+        Caption = 'Sair'
+      end
+    end
+    object Usuario1: TMenuItem
+      Caption = 'Usuario'
+      object CadastroUsuario1: TMenuItem
+        Caption = 'Cadastro'
+        OnClick = CadastroUsuario1Click
+      end
+    end
+    object arefa1: TMenuItem
+      Caption = 'Tarefa'
+    end
+  end
 end
