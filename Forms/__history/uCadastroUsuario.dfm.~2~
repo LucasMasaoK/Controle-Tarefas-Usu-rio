@@ -1,4 +1,0 @@
-inherited frmCadastroUsuario: TfrmCadastroUsuario
-  Caption = 'Cadastro de Usuario'
-  TextHeight = 15
-end

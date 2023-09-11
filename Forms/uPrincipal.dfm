@@ -32,6 +32,13 @@ object frmPrincipal: TfrmPrincipal
     end
     object arefa1: TMenuItem
       Caption = 'Tarefa'
+      object Cadastro1: TMenuItem
+        Caption = 'Cadastro'
+        OnClick = Cadastro1Click
+      end
+      object ControleTarefas1: TMenuItem
+        Caption = 'Controle Tarefas'
+      end
     end
   end
 end

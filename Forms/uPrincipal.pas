@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uCadastroUsuario;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uCadastroUsuario, uCadastroTarefas;
 
 type
   TfrmPrincipal = class(TForm)
@@ -14,7 +14,10 @@ type
     Usuario1: TMenuItem;
     arefa1: TMenuItem;
     CadastroUsuario1: TMenuItem;
+    Cadastro1: TMenuItem;
+    ControleTarefas1: TMenuItem;
     procedure CadastroUsuario1Click(Sender: TObject);
+    procedure Cadastro1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,6 +30,13 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.Cadastro1Click(Sender: TObject);
+begin
+frmCadastroTarefas:=TfrmCadastroTarefas.Create(Self);
+frmCadastroTarefas.ShowModal;
+frmCadastroTarefas.Release;
+end;
 
 procedure TfrmPrincipal.CadastroUsuario1Click(Sender: TObject);
 begin

@@ -2,8 +2,8 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
   TextHeight = 15
   inherited Panel2: TPanel
-    ExplicitLeft = -32
-    ExplicitTop = 32
+    ExplicitLeft = 24
+    ExplicitTop = 8
     object Label1: TLabel
       Left = 16
       Top = 40
@@ -152,8 +152,9 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Top = 200
       Width = 184
       Height = 23
-      EditLabel.Width = 3
+      EditLabel.Width = 102
       EditLabel.Height = 15
+      EditLabel.Caption = 'editConfirmaSenha'
       PasswordChar = '*'
       TabOrder = 4
       Text = ''
