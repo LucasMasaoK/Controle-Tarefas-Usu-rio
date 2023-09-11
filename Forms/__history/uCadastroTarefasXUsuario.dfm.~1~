@@ -1,0 +1,23 @@
+inherited frmCadastroTarefa: TfrmCadastroTarefa
+  Caption = 'Cadastro de Tarefas'
+  ClientHeight = 442
+  ClientWidth = 628
+  TextHeight = 15
+  inherited Panel1: TPanel
+    Width = 628
+  end
+  inherited Panel2: TPanel
+    Top = 384
+    Width = 628
+    ExplicitTop = 373
+    ExplicitWidth = 626
+  end
+  inherited dbGrid: TDBGrid
+    Width = 628
+    Height = 295
+  end
+  inherited bdQuery: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM USUARIO_TAREFA;')
+  end
+end

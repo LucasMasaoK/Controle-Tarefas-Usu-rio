@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.Client, Data.DB, FireDAC.Comp.DataSet, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls;
+  Vcl.ExtCtrls, Vcl.Mask, Vcl.DBCtrls, uConsultaTarefas;
 
 type
   TfrmCadastroTarefas = class(TfrmModelCadastro)
@@ -20,12 +20,13 @@ type
     DBEdit1: TDBEdit;
     dsTarefas: TDataSource;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    editNome: TDBEdit;
     Label3: TLabel;
     editTipo: TDBEdit;
     comboTipo: TComboBox;
     SpeedButton1: TSpeedButton;
     procedure btnSalvarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +54,14 @@ begin
   end;
   inherited;
 
+end;
+
+procedure TfrmCadastroTarefas.SpeedButton1Click(Sender: TObject);
+begin
+  inherited;
+  frmConsultaTarefas:=TfrmConsultaTarefas.Create(Self);
+  frmConsultaTarefas.ShowModal;
+  frmConsultaTarefas.Release;
 end;
 
 end.

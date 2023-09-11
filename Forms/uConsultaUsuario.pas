@@ -3,7 +3,8 @@ unit uConsultaUsuario;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uModelConsulta, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
@@ -19,11 +20,13 @@ type
     procedure FormShow(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
+    procedure btnIncluirClick(Sender: TObject);
 
   private
     { Private declarations }
   public
-    { Public declarations }
+    consultaOrigem: string;
   end;
 
 var
@@ -33,36 +36,63 @@ implementation
 
 {$R *.dfm}
 
-uses uCadastroUsuario;
+uses uCadastroUsuario, uCadastroTarefasXUsuario;
 
-
-
-
-
+procedure TfrmConsultaUsuario.btnIncluirClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+  frmCadastroUsuario.btnLimpar.Click;
+  frmCadastroUsuario.editNome.SetFocus;
+end;
 
 procedure TfrmConsultaUsuario.btnLimparClick(Sender: TObject);
 begin
   inherited;
-frmCadastroUsuario.bdQuery.Open;
-frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',bdQueryCOD_USUARIO.AsString,[]);
-Close;
+  if consultaOrigem = 'cadUser' then
+  begin
+    frmCadastroUsuario.bdQuery.Open;
+    frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',
+      bdQueryCOD_USUARIO.AsString, []);
+  end
+  else if consultaOrigem = 'cadTarefa' then
+  begin
+    frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
+  end;
+
+  Close;
+end;
+
+procedure TfrmConsultaUsuario.btnSairClick(Sender: TObject);
+begin
+  inherited;
+  Close;
 end;
 
 procedure TfrmConsultaUsuario.dbGridDblClick(Sender: TObject);
 begin
   inherited;
-  frmCadastroUsuario.bdQuery.Open;
-frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',bdQueryCOD_USUARIO.AsString,[]);
-Close;
+  if consultaOrigem = 'cadUser' then
+  begin
+    frmCadastroUsuario.bdQuery.Open;
+    frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',
+      bdQueryCOD_USUARIO.AsString, []);
+  end
+  else if consultaOrigem = 'cadTarefa' then
+  begin
+    frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
+  end;
+
+  Close;
 end;
 
 procedure TfrmConsultaUsuario.FormShow(Sender: TObject);
 begin
   inherited;
-bdQuery.Active:=true;
-bdQuery.SQL.Clear;
-bdQuery.SQL.Add('SELECT * FROM USUARIO');
-bdQuery.Open;
+  bdQuery.Active := true;
+  bdQuery.SQL.Clear;
+  bdQuery.SQL.Add('SELECT * FROM USUARIO');
+  bdQuery.Open;
 end;
 
 end.

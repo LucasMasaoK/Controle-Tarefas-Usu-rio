@@ -1,9 +1,18 @@
 inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
+  ClientWidth = 628
   TextHeight = 15
+  inherited Panel1: TPanel
+    Width = 628
+    ExplicitTop = 349
+    ExplicitWidth = 626
+  end
   inherited Panel2: TPanel
-    ExplicitLeft = 24
-    ExplicitTop = 8
+    Width = 628
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 626
+    ExplicitHeight = 349
     object Label1: TLabel
       Left = 16
       Top = 40
@@ -18,7 +27,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Width = 33
       Height = 15
       Caption = 'Nome'
-      FocusControl = DBEdit2
+      FocusControl = editNome
     end
     object Label3: TLabel
       Left = 16
@@ -129,7 +138,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Enabled = False
       TabOrder = 1
     end
-    object DBEdit2: TDBEdit
+    object editNome: TDBEdit
       Left = 16
       Top = 104
       Width = 500

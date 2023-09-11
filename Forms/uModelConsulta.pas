@@ -15,7 +15,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     dbGrid: TDBGrid;
-    LabeledEdit1: TLabeledEdit;
+    editPesquisa: TLabeledEdit;
     comboPesquisa: TComboBox;
     btnPesquisar: TBitBtn;
     btnSair: TBitBtn;

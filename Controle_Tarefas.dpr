@@ -8,13 +8,18 @@ uses
   uDataModel in 'Banco\uDataModel.pas' {DataModule1: TDataModule},
   uCadastroTarefas in 'Forms\uCadastroTarefas.pas' {frmCadastroTarefas},
   uModelConsulta in 'Forms\uModelConsulta.pas' {frmModelConsulta},
-  uConsultaUsuario in 'Forms\uConsultaUsuario.pas' {frmConsultaUsuario};
+  uConsultaUsuario in 'Forms\uConsultaUsuario.pas' {frmConsultaUsuario},
+  uConsultaTarefas in 'Forms\uConsultaTarefas.pas' {frmConsultaTarefas},
+  Vcl.Themes,
+  Vcl.Styles,
+  uCadastroTarefasXUsuario in 'Forms\uCadastroTarefasXUsuario.pas' {frmCadastroTarefaXUsuario};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Light');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmModelCadastro, frmModelCadastro);
   Application.CreateForm(TfrmCadastroUsuario, frmCadastroUsuario);
@@ -22,5 +27,7 @@ begin
   Application.CreateForm(TfrmCadastroTarefas, frmCadastroTarefas);
   Application.CreateForm(TfrmModelConsulta, frmModelConsulta);
   Application.CreateForm(TfrmConsultaUsuario, frmConsultaUsuario);
+  Application.CreateForm(TfrmConsultaTarefas, frmConsultaTarefas);
+  Application.CreateForm(TfrmCadastroTarefaXUsuario, frmCadastroTarefaXUsuario);
   Application.Run;
 end.

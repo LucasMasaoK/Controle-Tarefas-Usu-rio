@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Sistema Controle Tarefas'
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 487
+  ClientWidth = 721
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -38,6 +38,7 @@ object frmPrincipal: TfrmPrincipal
       end
       object ControleTarefas1: TMenuItem
         Caption = 'Controle Tarefas'
+        OnClick = ControleTarefas1Click
       end
     end
   end

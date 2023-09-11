@@ -1,23 +1,24 @@
 inherited frmConsultaUsuario: TfrmConsultaUsuario
   Caption = 'Consulta de Usuario'
   OnShow = FormShow
+  ExplicitWidth = 642
+  ExplicitHeight = 467
   TextHeight = 15
   inherited Panel1: TPanel
-    inherited LabeledEdit1: TLabeledEdit
-      EditLabel.ExplicitLeft = 0
-      EditLabel.ExplicitTop = -18
-      EditLabel.ExplicitWidth = 67
-    end
+    ExplicitWidth = 624
   end
   inherited Panel2: TPanel
-    ExplicitLeft = 192
-    ExplicitTop = 336
+    ExplicitTop = 362
+    ExplicitWidth = 624
     inherited btnSair: TBitBtn
-      OnClick = nil
+      OnClick = btnSairClick
     end
     inherited btnLimpar: TBitBtn
       Caption = '&Selecionar'
       OnClick = btnLimparClick
+    end
+    inherited btnIncluir: TBitBtn
+      OnClick = btnIncluirClick
     end
   end
   inherited dbGrid: TDBGrid

@@ -1,0 +1,78 @@
+unit uConsultaTarefas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uModelConsulta, Data.DB,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TfrmConsultaTarefas = class(TfrmModelConsulta)
+    bdQueryCOD_TAREFA: TIntegerField;
+    bdQueryNOME: TStringField;
+    bdQueryTIPO: TStringField;
+    procedure dbGridDblClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
+    procedure btnIncluirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    origemConsulta:String;
+  end;
+
+var
+  frmConsultaTarefas: TfrmConsultaTarefas;
+
+implementation
+
+{$R *.dfm}
+
+uses uCadastroTarefas, uCadastroTarefasXUsuario;
+
+procedure TfrmConsultaTarefas.btnIncluirClick(Sender: TObject);
+begin
+  inherited;
+Close;
+frmCadastroTarefas.btnLimpar.Click;
+frmCadastroTarefas.editNome.SetFocus;
+end;
+
+procedure TfrmConsultaTarefas.btnLimparClick(Sender: TObject);
+begin
+  inherited;
+  if origemConsulta='cadTarefa' then
+  begin
+  bd
+  bd.bdQuery.SQL.Clear;
+  bd.bdQuery.Command.CommandKind;
+  bd.bdQuery.sql.Add('INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)');
+   bd.bdQuery.ParamByName('pCodUsuario').AsString:=bd.editID.Text;
+   bd.bdQuery.ParamByName('pCodTarefa').AsString:=bdQueryCOD_TAREFA.AsString;;
+   bd.bdQuery.ExecSQL;
+   bd.bdQuery.open;
+
+   Close;
+  end;
+frmCadastroTarefas.bdQuery.Locate('COD_TAREFA',bdQueryCOD_TAREFA.AsString);
+Close;
+end;
+
+procedure TfrmConsultaTarefas.btnSairClick(Sender: TObject);
+begin
+  inherited;
+Close;
+end;
+
+procedure TfrmConsultaTarefas.dbGridDblClick(Sender: TObject);
+begin
+  inherited;
+frmCadastroTarefas.bdQuery.Locate('COD_TAREFA',bdQueryCOD_TAREFA.AsString);
+Close;
+end;
+
+end.

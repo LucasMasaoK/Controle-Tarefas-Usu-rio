@@ -17,7 +17,7 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
       Width = 33
       Height = 15
       Caption = 'Nome'
-      FocusControl = DBEdit2
+      FocusControl = editNome
     end
     object Label3: TLabel
       Left = 24
@@ -108,6 +108,7 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
         40936B5A41C36B5A41F06B5A41DB6B5942AB6C59407B68584020FFFFFF00FFFF
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
         FF00FFFFFF00}
+      OnClick = SpeedButton1Click
     end
     object DBEdit1: TDBEdit
       Left = 24
@@ -119,7 +120,7 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
       Enabled = False
       TabOrder = 0
     end
-    object DBEdit2: TDBEdit
+    object editNome: TDBEdit
       Left = 24
       Top = 96
       Width = 500

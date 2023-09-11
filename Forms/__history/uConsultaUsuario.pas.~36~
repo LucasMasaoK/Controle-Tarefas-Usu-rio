@@ -18,11 +18,14 @@ type
     bdQuerySENHA: TStringField;
     procedure FormShow(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
+    procedure btnIncluirClick(Sender: TObject);
 
   private
     { Private declarations }
   public
-    { Public declarations }
+
   end;
 
 var
@@ -39,10 +42,34 @@ uses uCadastroUsuario;
 
 
 
+procedure TfrmConsultaUsuario.btnIncluirClick(Sender: TObject);
+begin
+  inherited;
+Close;
+frmCadastroUsuario.btnLimpar.Click;
+frmCadastroUsuario.editNome.SetFocus;
+end;
+
+procedure TfrmConsultaUsuario.btnLimparClick(Sender: TObject);
+begin
+  inherited;
+frmCadastroUsuario.bdQuery.Open;
+frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',bdQueryCOD_USUARIO.AsString,[]);
+Close;
+end;
+
+procedure TfrmConsultaUsuario.btnSairClick(Sender: TObject);
+begin
+  inherited;
+Close;
+end;
+
 procedure TfrmConsultaUsuario.dbGridDblClick(Sender: TObject);
 begin
   inherited;
-frmCadastroUsuario.editID.Text:= bdQueryCOD_USUARIO.AsString;
+  frmCadastroUsuario.bdQuery.Open;
+frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',bdQueryCOD_USUARIO.AsString,[]);
+Close;
 end;
 
 procedure TfrmConsultaUsuario.FormShow(Sender: TObject);

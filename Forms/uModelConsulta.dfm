@@ -19,7 +19,8 @@ object frmModelConsulta: TfrmModelConsulta
     Height = 89
     Align = alTop
     TabOrder = 0
-    object LabeledEdit1: TLabeledEdit
+    ExplicitWidth = 626
+    object editPesquisa: TLabeledEdit
       Left = 24
       Top = 34
       Width = 273
@@ -59,6 +60,8 @@ object frmModelConsulta: TfrmModelConsulta
     Height = 58
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 373
+    ExplicitWidth = 626
     object btnSair: TBitBtn
       Left = 528
       Top = 6

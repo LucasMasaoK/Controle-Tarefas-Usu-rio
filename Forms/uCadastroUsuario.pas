@@ -20,7 +20,7 @@ type
     Label1: TLabel;
     editID: TDBEdit;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    editNome: TDBEdit;
     Label3: TLabel;
     Label4: TLabel;
     editSenha: TDBEdit;
@@ -73,6 +73,7 @@ procedure TfrmCadastroUsuario.SpeedButton1Click(Sender: TObject);
 begin
   inherited;
 frmconsultaUsuario:= TfrmconsultaUsuario.create(self);
+frmConsultaUsuario.consultaOrigem:='cadUser';
 frmconsultaUsuario.showModal;
 frmconsultaUsuario.release;
 end;
