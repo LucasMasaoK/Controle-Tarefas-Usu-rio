@@ -10,7 +10,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Width = 39
       Height = 15
       Caption = 'Codigo'
-      FocusControl = DBEdit1
+      FocusControl = editID
     end
     object Label2: TLabel
       Left = 16
@@ -117,8 +117,9 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
         40936B5A41C36B5A41F06B5A41DB6B5942AB6C59407B68584020FFFFFF00FFFF
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
         FF00FFFFFF00}
+      OnClick = SpeedButton1Click
     end
-    object DBEdit1: TDBEdit
+    object editID: TDBEdit
       Left = 16
       Top = 59
       Width = 40
@@ -152,9 +153,9 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Top = 200
       Width = 184
       Height = 23
-      EditLabel.Width = 102
+      EditLabel.Width = 93
       EditLabel.Height = 15
-      EditLabel.Caption = 'editConfirmaSenha'
+      EditLabel.Caption = 'Confirme a senha'
       PasswordChar = '*'
       TabOrder = 4
       Text = ''
@@ -184,6 +185,8 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
     end
   end
   inherited bdQuery: TFDQuery
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
     UpdateOptions.GeneratorName = 'GEN_USUARIO_ID'

@@ -120,7 +120,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Forms\uModelConsulta.pas">
-            <Form>Form1</Form>
+            <Form>frmModelConsulta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\uConsultaUsuario.pas">
+            <Form>frmConsultaUsuario</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

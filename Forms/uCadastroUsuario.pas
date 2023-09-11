@@ -8,7 +8,7 @@ uses
   Vcl.Buttons, Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client,
-  Data.DB, FireDAC.Comp.DataSet, Vcl.Mask, Vcl.DBCtrls;
+  Data.DB, FireDAC.Comp.DataSet, Vcl.Mask, Vcl.DBCtrls,uConsultaUsuario;
 
 type
   TfrmCadastroUsuario = class(TfrmModelCadastro)
@@ -18,7 +18,7 @@ type
     bdQueryDIREITO: TStringField;
     bdQuerySENHA: TStringField;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    editID: TDBEdit;
     Label2: TLabel;
     DBEdit2: TDBEdit;
     Label3: TLabel;
@@ -30,6 +30,7 @@ type
     comboDireito: TComboBox;
     procedure editConfirmaSenhaExit(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,6 +67,14 @@ begin
 ShowMessage('Senhas devem ser iguais!');
 end;
 
+end;
+
+procedure TfrmCadastroUsuario.SpeedButton1Click(Sender: TObject);
+begin
+  inherited;
+frmconsultaUsuario:= TfrmconsultaUsuario.create(self);
+frmconsultaUsuario.showModal;
+frmconsultaUsuario.release;
 end;
 
 end.

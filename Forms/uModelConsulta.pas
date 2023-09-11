@@ -11,16 +11,20 @@ uses
   FireDAC.Comp.Client, FireDAC.Comp.DataSet;
 
 type
-  TForm1 = class(TForm)
+  TfrmModelConsulta = class(TForm)
     Panel1: TPanel;
     Panel2: TPanel;
-    DBGrid1: TDBGrid;
+    dbGrid: TDBGrid;
     LabeledEdit1: TLabeledEdit;
     comboPesquisa: TComboBox;
     btnPesquisar: TBitBtn;
     btnSair: TBitBtn;
-    BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
+    btnLimpar: TBitBtn;
+    btnIncluir: TBitBtn;
+    bdQuery: TFDQuery;
+    bdTransaction: TFDTransaction;
+    dsQuery: TDataSource;
   private
     { Private declarations }
   public
@@ -28,7 +32,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmModelConsulta: TfrmModelConsulta;
 
 implementation
 

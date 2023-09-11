@@ -7,7 +7,8 @@ uses
   uCadastroUsuario in 'Forms\uCadastroUsuario.pas' {frmCadastroUsuario},
   uDataModel in 'Banco\uDataModel.pas' {DataModule1: TDataModule},
   uCadastroTarefas in 'Forms\uCadastroTarefas.pas' {frmCadastroTarefas},
-  uModelConsulta in 'Forms\uModelConsulta.pas' {Form1};
+  uModelConsulta in 'Forms\uModelConsulta.pas' {frmModelConsulta},
+  uConsultaUsuario in 'Forms\uConsultaUsuario.pas' {frmConsultaUsuario};
 
 {$R *.res}
 
@@ -19,6 +20,7 @@ begin
   Application.CreateForm(TfrmCadastroUsuario, frmCadastroUsuario);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TfrmCadastroTarefas, frmCadastroTarefas);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmModelConsulta, frmModelConsulta);
+  Application.CreateForm(TfrmConsultaUsuario, frmConsultaUsuario);
   Application.Run;
 end.
