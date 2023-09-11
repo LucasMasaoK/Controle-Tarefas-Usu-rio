@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/09/11 09:32:26.936,=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/09/11 09:33:25.202,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uPrincipal.pas=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/09/11 09:33:25.202,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uPrincipal.dfm=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2023/09/11 09:33:51.368,C:\Cursos\Delphi\Controle Tarefas Usuário\Controle_Tarefas.dproj=C:\Users\Lucas Marques\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
