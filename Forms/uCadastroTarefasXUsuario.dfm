@@ -96,6 +96,13 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
       Caption = 'Codigo'
       FocusControl = editID
     end
+    object Label2: TLabel [2]
+      Left = 408
+      Top = 16
+      Width = 51
+      Height = 15
+      Caption = 'Filtrar por'
+    end
     inherited editPesquisa: TLabeledEdit
       Left = 108
       Width = 277
@@ -110,6 +117,13 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
     inherited comboPesquisa: TComboBox
       Left = 408
       Width = 98
+      ItemIndex = 0
+      Text = 'Di'#225'ria'
+      Items.Strings = (
+        'Di'#225'ria'
+        'Semanal'
+        'Quinzenal'
+        'Mensal')
       ExplicitLeft = 408
       ExplicitWidth = 98
     end
@@ -117,27 +131,36 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
       OnClick = btnPesquisarClick
     end
     object editID: TDBEdit
-      Left = 9
-      Top = 34
+      Left = 8
+      Top = 37
       Width = 40
       Height = 23
       DataField = 'COD_USUARIO'
       Enabled = False
       TabOrder = 3
+      OnChange = editIDChange
     end
   end
   inherited Panel2: TPanel
+    inherited BitBtn2: TBitBtn
+      Width = 82
+      ExplicitWidth = 82
+    end
+    inherited btnLimpar: TBitBtn
+      OnClick = btnLimparClick
+    end
     inherited btnIncluir: TBitBtn
       OnClick = btnIncluirClick
     end
   end
   inherited bdQuery: TFDQuery
-    Active = True
     SQL.Strings = (
       
         'SELECT tarefa.cod_tarefa,tarefa.nome,tarefa.tipo FROM USUARIO_TA' +
         'REFA INNER JOIN tarefa ON usuario_tarefa.cod_tarefa = tarefa.cod' +
         '_tarefa;')
+    Left = 448
+    Top = 336
     object bdQueryCOD_TAREFA: TIntegerField
       DisplayLabel = 'ID'
       FieldName = 'COD_TAREFA'
@@ -157,5 +180,24 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
       FixedChar = True
       Size = 1
     end
+  end
+  object bdComand: TFDCommand
+    Connection = DataModule1.conexaoBD
+    CommandText.Strings = (
+      'INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)')
+    ParamData = <
+      item
+        Name = 'PCODUSUARIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'PCODTAREFA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end>
+    Left = 328
+    Top = 336
   end
 end

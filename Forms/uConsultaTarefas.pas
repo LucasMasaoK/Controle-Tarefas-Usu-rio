@@ -15,7 +15,6 @@ type
     bdQueryCOD_TAREFA: TIntegerField;
     bdQueryNOME: TStringField;
     bdQueryTIPO: TStringField;
-    bdComand: TFDCommand;
     procedure dbGridDblClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
@@ -48,12 +47,12 @@ begin
   inherited;
   if origemConsulta='cadTarefa' then
   begin
-
-  bdComand.Active:=true;
-  bdComand.CommandText.Text:='INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)';
-   bdComand.ParamByName('pCodUsuario').AsString:=frmCadastroTarefaXUsuario.editID.Text;
-   bdComand.ParamByName('pCodTarefa').AsString:=bdQueryCOD_TAREFA.AsString;
-   bdComand.open;
+ frmCadastroTarefaXUsuario.bdComand.Active:=false;
+  frmCadastroTarefaXUsuario.bdComand.CommandText.Text:='INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)';
+   frmCadastroTarefaXUsuario.bdComand.ParamByName('pCodUsuario').AsString:=frmCadastroTarefaXUsuario.editID.Text;
+   frmCadastroTarefaXUsuario.bdComand.ParamByName('pCodTarefa').AsString:=bdQueryCOD_TAREFA.AsString;
+  frmCadastroTarefaXUsuario.bdComand.open;
+  frmCadastroTarefaXUsuario.bdQuery.Refresh;
 
    Close;
   end;

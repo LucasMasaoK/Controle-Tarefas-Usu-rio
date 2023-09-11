@@ -1,13 +1,15 @@
 inherited frmConsultaUsuario: TfrmConsultaUsuario
   Caption = 'Consulta de Usuario'
+  ClientWidth = 626
   OnShow = FormShow
   ExplicitWidth = 642
-  ExplicitHeight = 467
   TextHeight = 15
   inherited Panel1: TPanel
+    Width = 626
     ExplicitWidth = 624
   end
   inherited Panel2: TPanel
+    Width = 626
     ExplicitTop = 362
     ExplicitWidth = 624
     inherited btnSair: TBitBtn
@@ -22,6 +24,7 @@ inherited frmConsultaUsuario: TfrmConsultaUsuario
     end
   end
   inherited dbGrid: TDBGrid
+    Width = 626
     OnDblClick = dbGridDblClick
   end
   inherited bdQuery: TFDQuery

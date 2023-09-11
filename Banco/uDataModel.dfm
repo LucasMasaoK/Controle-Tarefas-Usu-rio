@@ -1,7 +1,6 @@
 object DataModule1: TDataModule1
-  Height = 750
-  Width = 1000
-  PixelsPerInch = 120
+  Height = 600
+  Width = 800
   object conexaoBD: TFDConnection
     Params.Strings = (
       'Database=C:\Cursos\Delphi\Controle Tarefas Usu'#225'rio\BD.FDB'
@@ -9,7 +8,8 @@ object DataModule1: TDataModule1
       'Password=masterkey'
       'CharacterSet=WIN1252'
       'DriverID=FB')
-    Left = 872
-    Top = 592
+    Connected = True
+    Left = 698
+    Top = 474
   end
 end

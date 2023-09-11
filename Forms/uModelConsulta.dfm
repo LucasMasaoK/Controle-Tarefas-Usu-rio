@@ -69,6 +69,7 @@ object frmModelConsulta: TfrmModelConsulta
       Height = 41
       Caption = '&Sair'
       TabOrder = 0
+      OnClick = btnSairClick
     end
     object BitBtn2: TBitBtn
       Left = 424

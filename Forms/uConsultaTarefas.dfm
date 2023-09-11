@@ -69,23 +69,4 @@ inherited frmConsultaTarefas: TfrmConsultaTarefas
       Size = 1
     end
   end
-  object bdComand: TFDCommand
-    Connection = DataModule1.conexaoBD
-    CommandText.Strings = (
-      'INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)')
-    ParamData = <
-      item
-        Name = 'PCODUSUARIO'
-        DataType = ftInteger
-        ParamType = ptInput
-        Value = Null
-      end
-      item
-        Name = 'PCODTAREFA'
-        DataType = ftInteger
-        ParamType = ptInput
-      end>
-    Left = 328
-    Top = 336
-  end
 end

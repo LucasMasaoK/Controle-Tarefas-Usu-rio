@@ -58,6 +58,7 @@ begin
   else if consultaOrigem = 'cadTarefa' then
   begin
     frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmCadastroTarefaXUsuario.editPesquisa.Text := bdQueryNOME.AsString;
   end;
 
   Close;

@@ -1,14 +1,11 @@
 inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
-  ClientWidth = 628
   TextHeight = 15
   inherited Panel1: TPanel
-    Width = 628
     ExplicitTop = 349
     ExplicitWidth = 626
   end
   inherited Panel2: TPanel
-    Width = 628
     ExplicitLeft = 0
     ExplicitTop = 0
     ExplicitWidth = 626

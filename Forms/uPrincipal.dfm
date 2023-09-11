@@ -2,7 +2,7 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Sistema Controle Tarefas'
-  ClientHeight = 487
+  ClientHeight = 492
   ClientWidth = 721
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

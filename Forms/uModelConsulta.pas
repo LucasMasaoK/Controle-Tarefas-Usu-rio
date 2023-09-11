@@ -25,6 +25,7 @@ type
     bdQuery: TFDQuery;
     bdTransaction: TFDTransaction;
     dsQuery: TDataSource;
+    procedure btnSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,5 +38,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmModelConsulta.btnSairClick(Sender: TObject);
+begin
+Close;
+end;
 
 end.
