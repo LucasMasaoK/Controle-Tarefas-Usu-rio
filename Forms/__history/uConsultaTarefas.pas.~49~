@@ -123,21 +123,7 @@ end;
 procedure TfrmConsultaTarefas.dbGridDblClick(Sender: TObject);
 begin
   inherited;
-  if origemConsulta = 'cadTarefaXUsuario' then
-  begin
-    frmCadastroTarefaXUsuario.bdComand.Active := false;
-    frmCadastroTarefaXUsuario.bdComand.CommandText.Text :=
-      'INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)';
-    frmCadastroTarefaXUsuario.bdComand.ParamByName('pCodUsuario').AsString :=
-      frmCadastroTarefaXUsuario.editID.Text;
-    frmCadastroTarefaXUsuario.bdComand.ParamByName('pCodTarefa').AsString :=
-      bdQueryCOD_TAREFA.AsString;
-    frmCadastroTarefaXUsuario.bdComand.open;
-    frmCadastroTarefaXUsuario.bdQuery.Refresh;
-  end
-  else
-  begin
-   try
+  try
     frmCadastroTarefas.bdQuery.Locate('COD_TAREFA', bdQueryCOD_TAREFA.AsString);
   finally
     if bdQueryTIPO.AsString = 'D' then
@@ -156,7 +142,6 @@ begin
     begin
       frmCadastroTarefas.comboTipo.ItemIndex := 3;
     end
-  end;
   end;
   Close;
 end;
