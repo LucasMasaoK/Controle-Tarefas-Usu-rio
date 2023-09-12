@@ -80,6 +80,14 @@ procedure TfrmModelCadastro.FormShow(Sender: TObject);
 begin
   bdQuery.Active := true;
   bdQuery.Edit;
+  if DataModule1.usuarioTipo<>'S' then
+  begin
+  btnSalvar.Enabled:=false;
+  btnExcluir.Enabled:=false;
+  btnLimpar.Enabled:=false;
+  btnNovo.Enabled:=false;
+  end;
+
 end;
 
 end.

@@ -44,7 +44,7 @@ if DataModule1.bdLogin.RecordCount>0 then
 begin
 DataModule1.usuarioCod:=DataModule1.bdLoginCOD_USUARIO.AsString;
 DataModule1.usuarioLogado:=DataModule1.bdLoginNOME.AsString;
-DataModule1.usuarioTipo:=DataModule1.bdLoginCOD_USUARIO.AsString;
+DataModule1.usuarioTipo:=DataModule1.bdLoginDIREITO.AsString;
 frmPrincipal:=TfrmPrincipal.Create(Self);
 frmPrincipal.ShowModal;
 frmPrincipal.Release;

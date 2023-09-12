@@ -13,7 +13,21 @@ object frmPrincipal: TfrmPrincipal
   Menu = menuPrincipal
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnShow = FormShow
   TextHeight = 15
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 456
+    Width = 721
+    Height = 31
+    Panels = <
+      item
+        Width = 300
+      end
+      item
+        Width = 50
+      end>
+  end
   object menuPrincipal: TMainMenu
     Left = 248
     Top = 184

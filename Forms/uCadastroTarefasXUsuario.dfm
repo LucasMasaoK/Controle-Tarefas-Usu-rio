@@ -2,8 +2,7 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
   Caption = 'Cadastro de Tarefas'
   TextHeight = 15
   inherited Panel1: TPanel
-    ExplicitTop = -6
-    ExplicitWidth = 628
+    ExplicitWidth = 626
     object btnConsultaUsuario: TSpeedButton [0]
       Left = 47
       Top = 31

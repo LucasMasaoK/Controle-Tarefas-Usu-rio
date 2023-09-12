@@ -11,6 +11,7 @@ object frmModelConsulta: TfrmModelConsulta
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -19,7 +20,6 @@ object frmModelConsulta: TfrmModelConsulta
     Height = 89
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 626
     object editPesquisa: TLabeledEdit
       Left = 24
       Top = 34

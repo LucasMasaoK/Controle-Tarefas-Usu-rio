@@ -27,6 +27,7 @@ type
     procedure btnIncluirClick(Sender: TObject);
     procedure editIDChange(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +41,7 @@ implementation
 
 {$R *.dfm}
 
-uses uConsultaTarefas;
+uses uConsultaTarefas, uDataModel;
 
 procedure TfrmCadastroTarefaXUsuario.btnConsultaUsuarioClick(Sender: TObject);
 begin
@@ -93,12 +94,12 @@ var
 begin
   inherited;
   bdQuery.sql.Clear;
-  bdQuery.sql.Add('SELECT tarefa.cod_tarefa,tarefa.nome,tarefa.tipo FROM USUARIO_TAREFA JOIN tarefa ON usuario_tarefa.cod_tarefa = tarefa.cod_tarefa where usuario_tarefa.cod_usuario= :pCodUsuario and  tarefa.tipo= :pTarefaTipo');
-  bdQuery.ParamByName('pCodUsuario').AsString:=editID.Text;
-  sql:=comboPesquisa.Text;
-  bdQuery.ParamByName('pTarefaTipo').AsString:=sql[1];
-  bdQuery.Open;
-
+  bdQuery.sql.Add
+    ('SELECT tarefa.cod_tarefa,tarefa.nome,tarefa.tipo FROM USUARIO_TAREFA JOIN tarefa ON usuario_tarefa.cod_tarefa = tarefa.cod_tarefa where usuario_tarefa.cod_usuario= :pCodUsuario and  tarefa.tipo= :pTarefaTipo');
+  bdQuery.ParamByName('pCodUsuario').AsString := editID.text;
+  sql := comboPesquisa.text;
+  bdQuery.ParamByName('pTarefaTipo').AsString := sql[1];
+  bdQuery.open;
 
 end;
 
@@ -112,6 +113,15 @@ begin
     + editID.text);
   bdQuery.open;
 
+end;
+
+procedure TfrmCadastroTarefaXUsuario.FormShow(Sender: TObject);
+begin
+  inherited;
+  if DataModule1.usuarioTipo <> 'S' then
+  begin
+    btnLimpar.Enabled := false;
+  end;
 end;
 
 end.

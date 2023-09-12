@@ -1,0 +1,59 @@
+unit uLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,
+  Vcl.ExtCtrls;
+
+type
+  TfrmLogin = class(TForm)
+    editNome: TLabeledEdit;
+    editSenha: TLabeledEdit;
+    btnSair: TBitBtn;
+    btnEntrar: TBitBtn;
+    procedure btnEntrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.dfm}
+
+uses uDataModel, uPrincipal;
+
+procedure TfrmLogin.btnEntrarClick(Sender: TObject);
+begin
+DataModule1.bdLogin.Close;
+DataModule1.bdLogin.SQL.Clear;
+DataModule1.bdLogin.Params.Clear;
+DataModule1.bdLogin.SQL.Add('');
+DataModule1.bdLogin.SQL.Add('SELECT * FROM USUARIO WHERE NOME= :pNome AND SENHA= :pSenha');
+DataModule1.bdLogin.ParamByName('pNome').AsString:=editNome.Text;
+DataModule1.bdLogin.ParamByName('pSenha').AsString:=editSenha.Text;
+DataModule1.bdLogin.Open;
+
+if DataModule1.bdLogin.RecordCount>0 then
+begin
+DataModule1.usuarioCod:=DataModule1.bdLoginCOD_USUARIO.AsString;
+DataModule1.usuarioLogado:=DataModule1.bdLoginNOME.AsString;
+DataModule1.usuarioTipo:=DataModule1.bdLoginCOD_USUARIO.AsString;
+frmPrincipal:=TfrmPrincipal.Create(Self);
+frmPrincipal.ShowModal;
+frmPrincipal.Release;
+frmLogin.Hide;
+end
+else
+begin
+ShowMessage('Usuario e senha incorretos');
+end;
+end;
+
+end.

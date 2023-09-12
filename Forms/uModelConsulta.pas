@@ -26,6 +26,7 @@ type
     bdTransaction: TFDTransaction;
     dsQuery: TDataSource;
     procedure btnSairClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,9 +40,19 @@ implementation
 
 {$R *.dfm}
 
+uses uDataModel;
+
 procedure TfrmModelConsulta.btnSairClick(Sender: TObject);
 begin
 Close;
+end;
+
+procedure TfrmModelConsulta.FormShow(Sender: TObject);
+begin
+if DataModule1.usuarioTipo<>'S' then
+  begin
+  btnIncluir.Enabled:=false;
+  end;
 end;
 
 end.

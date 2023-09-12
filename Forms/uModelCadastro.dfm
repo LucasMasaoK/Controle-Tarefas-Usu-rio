@@ -21,7 +21,8 @@ object frmModelCadastro: TfrmModelCadastro
     Height = 82
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 357
+    ExplicitTop = 349
+    ExplicitWidth = 626
     object btnSalvar: TBitBtn
       Left = 163
       Top = 24
@@ -74,7 +75,8 @@ object frmModelCadastro: TfrmModelCadastro
     Height = 360
     Align = alClient
     TabOrder = 1
-    ExplicitHeight = 357
+    ExplicitWidth = 626
+    ExplicitHeight = 349
   end
   object bdQuery: TFDQuery
     Connection = DataModule1.conexaoBD
