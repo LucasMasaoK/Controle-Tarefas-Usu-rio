@@ -12,7 +12,8 @@ uses
   uConsultaTarefas in 'Forms\uConsultaTarefas.pas' {frmConsultaTarefas},
   Vcl.Themes,
   Vcl.Styles,
-  uCadastroTarefasXUsuario in 'Forms\uCadastroTarefasXUsuario.pas' {frmCadastroTarefaXUsuario};
+  uCadastroTarefasXUsuario in 'Forms\uCadastroTarefasXUsuario.pas' {frmCadastroTarefaXUsuario},
+  uLogin in 'Forms\uLogin.pas' {frmLogin};
 
 {$R *.res}
 
@@ -20,6 +21,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Light');
+  Application.CreateForm(TfrmLogin, frmLogin);
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmModelCadastro, frmModelCadastro);
   Application.CreateForm(TfrmCadastroUsuario, frmCadastroUsuario);

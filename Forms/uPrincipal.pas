@@ -19,6 +19,7 @@ type
     procedure CadastroUsuario1Click(Sender: TObject);
     procedure Cadastro1Click(Sender: TObject);
     procedure ControleTarefas1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,6 +52,11 @@ begin
  frmCadastroTarefaXUsuario:=TfrmCadastroTarefaXUsuario.Create(Self);
  frmCadastroTarefaXUsuario.ShowModal;
  frmCadastroTarefaXUsuario.Release;
+end;
+
+procedure TfrmPrincipal.Sair1Click(Sender: TObject);
+begin
+Application.Terminate;
 end;
 
 end.
