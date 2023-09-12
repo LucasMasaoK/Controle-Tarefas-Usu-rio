@@ -6,8 +6,6 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
     ExplicitWidth = 626
   end
   inherited Panel2: TPanel
-    ExplicitLeft = 0
-    ExplicitTop = 0
     ExplicitWidth = 626
     ExplicitHeight = 349
     object Label1: TLabel

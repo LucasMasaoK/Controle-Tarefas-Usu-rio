@@ -61,6 +61,7 @@ begin
   inherited;
   frmConsultaTarefas:=TfrmConsultaTarefas.Create(Self);
   frmConsultaTarefas.ShowModal;
+  frmConsultaTarefas.origemConsulta:='cadTarefa';
   frmConsultaTarefas.Release;
 end;
 

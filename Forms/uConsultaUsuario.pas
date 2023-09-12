@@ -16,12 +16,12 @@ type
     bdQueryCOD_USUARIO: TIntegerField;
     bdQueryNOME: TStringField;
     bdQueryDIREITO: TStringField;
-    bdQuerySENHA: TStringField;
     procedure FormShow(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -42,7 +42,7 @@ procedure TfrmConsultaUsuario.btnIncluirClick(Sender: TObject);
 begin
   inherited;
   Close;
-  frmCadastroUsuario.btnLimpar.Click;
+  frmCadastroUsuario.btnNovo.Click;
   frmCadastroUsuario.editNome.SetFocus;
 end;
 
@@ -62,6 +62,36 @@ begin
   end;
 
   Close;
+end;
+
+procedure TfrmConsultaUsuario.btnPesquisarClick(Sender: TObject);
+begin
+bdQuery.Close;
+ bdQuery.SQL.Clear;
+ bdQuery.Params.Clear;
+ bdQuery.SQL.Add('');
+ case comboPesquisa.ItemIndex of
+  0:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE COD_USUARIO= :pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text;
+ bdQuery.Open;
+ end;
+ 1:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE NOME LIKE :pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text+'%';
+ bdQuery.Open;
+ end;
+ 2:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE DIREITO=:pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text;
+ bdQuery.Open;
+ end;
+
+ end;
+
 end;
 
 procedure TfrmConsultaUsuario.btnSairClick(Sender: TObject);

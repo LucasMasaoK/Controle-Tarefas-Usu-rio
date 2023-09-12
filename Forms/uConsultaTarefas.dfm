@@ -6,16 +6,21 @@ inherited frmConsultaTarefas: TfrmConsultaTarefas
   inherited Panel1: TPanel
     Width = 626
     ExplicitWidth = 624
-    inherited editPesquisa: TLabeledEdit
-      EditLabel.ExplicitWidth = 66
+    inherited comboPesquisa: TComboBox
+      ItemIndex = 0
+      Text = 'C'#243'digo'
+      Items.Strings = (
+        'C'#243'digo'
+        'Nome'
+        'Tipo')
+    end
+    inherited btnPesquisar: TBitBtn
+      OnClick = btnPesquisarClick
     end
   end
   inherited Panel2: TPanel
     Width = 626
     ExplicitWidth = 624
-    inherited btnSair: TBitBtn
-      OnClick = btnSairClick
-    end
     inherited btnLimpar: TBitBtn
       Caption = '&Selecionar'
       OnClick = btnLimparClick

@@ -2,7 +2,6 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
   Caption = 'Cadastro de Tarefas'
   TextHeight = 15
   inherited Panel2: TPanel
-    ExplicitLeft = 0
     object Codigo: TLabel
       Left = 24
       Top = 32

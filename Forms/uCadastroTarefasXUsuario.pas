@@ -57,7 +57,7 @@ begin
   if editID.text <> EmptyStr then
   begin
     frmConsultaTarefas := TfrmConsultaTarefas.Create(Self);
-    frmConsultaTarefas.origemConsulta := 'cadTarefa';
+    frmConsultaTarefas.origemConsulta := 'cadTarefaXUsuario';
     frmConsultaTarefas.ShowModal;
     frmConsultaTarefas.Release;
   end

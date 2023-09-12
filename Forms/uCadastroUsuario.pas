@@ -32,6 +32,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
   private
+
     { Private declarations }
   public
     { Public declarations }

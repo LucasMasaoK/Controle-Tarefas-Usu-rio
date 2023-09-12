@@ -7,14 +7,20 @@ inherited frmConsultaUsuario: TfrmConsultaUsuario
   inherited Panel1: TPanel
     Width = 626
     ExplicitWidth = 624
+    inherited comboPesquisa: TComboBox
+      Text = 'Nome'
+      Items.Strings = (
+        'C'#243'digo'
+        'Nome'
+        'Direito')
+    end
+    inherited btnPesquisar: TBitBtn
+      OnClick = btnPesquisarClick
+    end
   end
   inherited Panel2: TPanel
     Width = 626
-    ExplicitTop = 362
     ExplicitWidth = 624
-    inherited btnSair: TBitBtn
-      OnClick = btnSairClick
-    end
     inherited btnLimpar: TBitBtn
       Caption = '&Selecionar'
       OnClick = btnLimparClick
@@ -30,7 +36,7 @@ inherited frmConsultaUsuario: TfrmConsultaUsuario
   inherited bdQuery: TFDQuery
     Active = True
     SQL.Strings = (
-      'SELECT * FROM USUARIO;')
+      'SELECT COD_USUARIO,NOME,DIREITO FROM USUARIO;')
     object bdQueryCOD_USUARIO: TIntegerField
       FieldName = 'COD_USUARIO'
       Origin = 'COD_USUARIO'
@@ -47,11 +53,6 @@ inherited frmConsultaUsuario: TfrmConsultaUsuario
       Origin = 'DIREITO'
       FixedChar = True
       Size = 1
-    end
-    object bdQuerySENHA: TStringField
-      FieldName = 'SENHA'
-      Origin = 'SENHA'
-      Size = 12
     end
   end
 end
