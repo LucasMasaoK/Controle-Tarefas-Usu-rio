@@ -36,4 +36,28 @@
     <Transaction>2023/09/12 09:46:09.636,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uLogin.dfm=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.dfm</Transaction>
     <Transaction>2023/09/12 09:46:09.636,C:\Cursos\Delphi\Controle Tarefas Usuário\Forms\uLogin.pas=C:\Cursos\Delphi\Controle Tarefas Usuário\Unit1.pas</Transaction>
   </Transactions>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Banco"/>
+    <File Path="Banco\uDataModel.pas"/>
+    <File Path="Banco\uDataModel.dfm"/>
+    <File Path="Forms"/>
+    <File Path="Forms\uCadastroTarefas.pas"/>
+    <File Path="Forms\uCadastroTarefas.dfm"/>
+    <File Path="Forms\uCadastroTarefasXUsuario.pas"/>
+    <File Path="Forms\uCadastroTarefasXUsuario.dfm"/>
+    <File Path="Forms\uCadastroUsuario.pas"/>
+    <File Path="Forms\uCadastroUsuario.dfm"/>
+    <File Path="Forms\uConsultaTarefas.pas"/>
+    <File Path="Forms\uConsultaTarefas.dfm"/>
+    <File Path="Forms\uConsultaUsuario.pas"/>
+    <File Path="Forms\uConsultaUsuario.dfm"/>
+    <File Path="Forms\uLogin.pas"/>
+    <File Path="Forms\uLogin.dfm"/>
+    <File Path="Forms\uModelCadastro.pas"/>
+    <File Path="Forms\uModelCadastro.dfm"/>
+    <File Path="Forms\uModelConsulta.pas"/>
+    <File Path="Forms\uModelConsulta.dfm"/>
+    <File Path="Forms\uPrincipal.pas"/>
+    <File Path="Forms\uPrincipal.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

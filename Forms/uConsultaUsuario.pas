@@ -36,7 +36,7 @@ implementation
 
 {$R *.dfm}
 
-uses uCadastroUsuario, uCadastroTarefasXUsuario;
+uses uCadastroUsuario, uCadastroTarefasXUsuario, uLogin;
 
 procedure TfrmConsultaUsuario.btnIncluirClick(Sender: TObject);
 begin
@@ -59,6 +59,12 @@ begin
   begin
     frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
     frmCadastroTarefaXUsuario.editPesquisa.Text := bdQueryNOME.AsString;
+  end
+  else if consultaOrigem = 'login' then
+  begin
+    frmLogin.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmLogin.editNome.Text := bdQueryNOME.AsString;
+    frmLogin.editSenha.SetFocus;
   end;
 
   Close;

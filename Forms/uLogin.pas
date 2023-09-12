@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, Vcl.DBCtrls;
 
 type
   TfrmLogin = class(TForm)
@@ -13,7 +13,11 @@ type
     editSenha: TLabeledEdit;
     btnSair: TBitBtn;
     btnEntrar: TBitBtn;
+    SpeedButton1: TSpeedButton;
+    editID: TDBEdit;
+    Label1: TLabel;
     procedure btnEntrarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,7 +31,7 @@ implementation
 
 {$R *.dfm}
 
-uses uDataModel, uPrincipal;
+uses uDataModel, uPrincipal, uConsultaUsuario;
 
 procedure TfrmLogin.btnEntrarClick(Sender: TObject);
 begin
@@ -53,7 +57,16 @@ end
 else
 begin
 ShowMessage('Usuario e senha incorretos');
+editSenha.SetFocus;
 end;
+end;
+
+procedure TfrmLogin.SpeedButton1Click(Sender: TObject);
+begin
+frmconsultaUsuario:= TfrmconsultaUsuario.create(self);
+frmConsultaUsuario.consultaOrigem:='login';
+frmconsultaUsuario.showModal;
+frmconsultaUsuario.release;
 end;
 
 end.
