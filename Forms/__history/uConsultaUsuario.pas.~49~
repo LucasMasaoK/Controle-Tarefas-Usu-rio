@@ -16,12 +16,12 @@ type
     bdQueryCOD_USUARIO: TIntegerField;
     bdQueryNOME: TStringField;
     bdQueryDIREITO: TStringField;
-    bdQuerySENHA: TStringField;
     procedure FormShow(Sender: TObject);
     procedure dbGridDblClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
     procedure btnSairClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -36,13 +36,13 @@ implementation
 
 {$R *.dfm}
 
-uses uCadastroUsuario, uCadastroTarefasXUsuario;
+uses uCadastroUsuario, uCadastroTarefasXUsuario, uLogin;
 
 procedure TfrmConsultaUsuario.btnIncluirClick(Sender: TObject);
 begin
   inherited;
   Close;
-  frmCadastroUsuario.btnLimpar.Click;
+  frmCadastroUsuario.btnNovo.Click;
   frmCadastroUsuario.editNome.SetFocus;
 end;
 
@@ -59,9 +59,45 @@ begin
   begin
     frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
     frmCadastroTarefaXUsuario.editPesquisa.Text := bdQueryNOME.AsString;
+  end
+  else if consultaOrigem = 'login' then
+  begin
+    frmLogin.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmLogin.editNome.Text := bdQueryNOME.AsString;
+    frmLogin.editSenha.SetFocus;
   end;
 
   Close;
+end;
+
+procedure TfrmConsultaUsuario.btnPesquisarClick(Sender: TObject);
+begin
+bdQuery.Close;
+ bdQuery.SQL.Clear;
+ bdQuery.Params.Clear;
+ bdQuery.SQL.Add('');
+ case comboPesquisa.ItemIndex of
+  0:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE COD_USUARIO= :pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text;
+ bdQuery.Open;
+ end;
+ 1:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE NOME LIKE :pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text+'%';
+ bdQuery.Open;
+ end;
+ 2:
+ begin
+ bdQuery.SQL.Add('SELECT * FROM USUARIO WHERE DIREITO=:pPesquisa');
+ bdQuery.ParamByName('pPesquisa').AsString:=editPesquisa.Text;
+ bdQuery.Open;
+ end;
+
+ end;
+
 end;
 
 procedure TfrmConsultaUsuario.btnSairClick(Sender: TObject);
@@ -73,7 +109,7 @@ end;
 procedure TfrmConsultaUsuario.dbGridDblClick(Sender: TObject);
 begin
   inherited;
-  if consultaOrigem = 'cadUser' then
+   if consultaOrigem = 'cadUser' then
   begin
     frmCadastroUsuario.bdQuery.Open;
     frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',
@@ -82,6 +118,13 @@ begin
   else if consultaOrigem = 'cadTarefa' then
   begin
     frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmCadastroTarefaXUsuario.editPesquisa.Text := bdQueryNOME.AsString;
+  end
+  else if consultaOrigem = 'login' then
+  begin
+    frmLogin.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmLogin.editNome.Text := bdQueryNOME.AsString;
+    frmLogin.editSenha.SetFocus;
   end;
 
   Close;

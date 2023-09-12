@@ -53,7 +53,7 @@ begin
      bdQueryTIPO.AsString := 'M';
   end;
   inherited;
-   ShowMessage('Tarefa cadastrada com sucesso!');
+
 end;
 
 procedure TfrmCadastroTarefas.SpeedButton1Click(Sender: TObject);

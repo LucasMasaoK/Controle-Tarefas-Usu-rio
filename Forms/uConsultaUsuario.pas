@@ -109,15 +109,31 @@ end;
 procedure TfrmConsultaUsuario.dbGridDblClick(Sender: TObject);
 begin
   inherited;
-  if consultaOrigem = 'cadUser' then
+   if consultaOrigem = 'cadUser' then
   begin
     frmCadastroUsuario.bdQuery.Open;
     frmCadastroUsuario.bdQuery.Locate('COD_USUARIO',
       bdQueryCOD_USUARIO.AsString, []);
+      if frmCadastroUsuario.bdQueryDIREITO.AsString='O' then
+      begin
+      frmCadastroUsuario.comboDireito.ItemIndex:= 0;
+      end
+      else
+      begin
+      frmCadastroUsuario.comboDireito.ItemIndex:= 1;
+      end;
+
   end
   else if consultaOrigem = 'cadTarefa' then
   begin
     frmCadastroTarefaXUsuario.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmCadastroTarefaXUsuario.editPesquisa.Text := bdQueryNOME.AsString;
+  end
+  else if consultaOrigem = 'login' then
+  begin
+    frmLogin.editID.Text := bdQueryCOD_USUARIO.AsString;
+    frmLogin.editNome.Text := bdQueryNOME.AsString;
+    frmLogin.editSenha.SetFocus;
   end;
 
   Close;

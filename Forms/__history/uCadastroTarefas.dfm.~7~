@@ -142,7 +142,6 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
       Top = 144
       Width = 145
       Height = 23
-      ItemIndex = 0
       TabOrder = 3
       Text = 'Di'#225'ria'
       Items.Strings = (

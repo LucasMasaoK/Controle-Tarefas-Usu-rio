@@ -1,43 +1,33 @@
-inherited frmCadastroUsuario: TfrmCadastroUsuario
-  Caption = 'Cadastro de Usuario'
+inherited frmCadastroTarefas: TfrmCadastroTarefas
+  Caption = 'Cadastro de Tarefas'
   TextHeight = 15
   inherited Panel2: TPanel
-    ExplicitLeft = 24
-    ExplicitTop = 8
-    object Label1: TLabel
-      Left = 16
-      Top = 40
+    object Codigo: TLabel
+      Left = 24
+      Top = 32
       Width = 39
       Height = 15
       Caption = 'Codigo'
       FocusControl = DBEdit1
     end
     object Label2: TLabel
-      Left = 16
-      Top = 88
+      Left = 24
+      Top = 80
       Width = 33
       Height = 15
       Caption = 'Nome'
-      FocusControl = DBEdit2
+      FocusControl = editNome
     end
     object Label3: TLabel
-      Left = 16
-      Top = 136
-      Width = 40
+      Left = 24
+      Top = 128
+      Width = 23
       Height = 15
-      Caption = 'Direitos'
-    end
-    object Label4: TLabel
-      Left = 16
-      Top = 184
-      Width = 32
-      Height = 15
-      Caption = 'Senha'
-      FocusControl = editSenha
+      Caption = 'Tipo'
     end
     object SpeedButton1: TSpeedButton
-      Left = 61
-      Top = 56
+      Left = 70
+      Top = 43
       Width = 49
       Height = 28
       Flat = True
@@ -120,106 +110,82 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       OnClick = SpeedButton1Click
     end
     object DBEdit1: TDBEdit
-      Left = 16
-      Top = 59
+      Left = 24
+      Top = 48
       Width = 40
       Height = 23
-      DataField = 'COD_USUARIO'
-      DataSource = dsUsuario
-      Enabled = False
-      TabOrder = 1
-    end
-    object DBEdit2: TDBEdit
-      Left = 16
-      Top = 104
-      Width = 500
-      Height = 23
-      DataField = 'NOME'
-      DataSource = dsUsuario
-      TabOrder = 2
-    end
-    object editSenha: TDBEdit
-      Left = 16
-      Top = 200
-      Width = 184
-      Height = 23
-      DataField = 'SENHA'
-      DataSource = dsUsuario
-      PasswordChar = '*'
-      TabOrder = 3
-    end
-    object editConfirmaSenha: TLabeledEdit
-      Left = 232
-      Top = 200
-      Width = 184
-      Height = 23
-      EditLabel.Width = 102
-      EditLabel.Height = 15
-      EditLabel.Caption = 'editConfirmaSenha'
-      PasswordChar = '*'
-      TabOrder = 4
-      Text = ''
-      OnExit = editConfirmaSenhaExit
-    end
-    object editDireito: TDBEdit
-      Left = 55
-      Top = 155
-      Width = 106
-      Height = 23
-      DataField = 'DIREITO'
-      DataSource = dsUsuario
+      DataField = 'COD_TAREFA'
+      DataSource = dsTarefas
       Enabled = False
       TabOrder = 0
     end
-    object comboDireito: TComboBox
-      Left = 16
-      Top = 155
+    object editNome: TDBEdit
+      Left = 24
+      Top = 96
+      Width = 500
+      Height = 23
+      DataField = 'NOME'
+      DataSource = dsTarefas
+      TabOrder = 1
+    end
+    object editTipo: TDBEdit
+      Left = 24
+      Top = 144
+      Width = 40
+      Height = 23
+      DataField = 'TIPO'
+      DataSource = dsTarefas
+      TabOrder = 2
+    end
+    object comboTipo: TComboBox
+      Left = 24
+      Top = 144
       Width = 145
       Height = 23
       ItemIndex = 0
-      TabOrder = 5
-      Text = 'Operador'
+      TabOrder = 3
+      Text = 'Di'#225'ria'
       Items.Strings = (
-        'Operador'
-        'Supervisor')
+        'Di'#225'ria'
+        'Semanal'
+        'Quinzenal'
+        'Mensal')
     end
   end
   inherited bdQuery: TFDQuery
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
-    UpdateOptions.GeneratorName = 'GEN_USUARIO_ID'
-    UpdateOptions.AutoIncFields = 'COD_USUARIO'
+    UpdateOptions.GeneratorName = 'GEN_TAREFA_ID'
+    UpdateOptions.AutoIncFields = 'COD_TAREFA'
     SQL.Strings = (
-      'SELECT * FROM USUARIO;')
-    object bdQueryCOD_USUARIO: TIntegerField
-      AutoGenerateValue = arAutoInc
-      FieldName = 'COD_USUARIO'
-      Origin = 'COD_USUARIO'
+      'SELECT * FROM TAREFA;')
+    Left = 512
+    Top = 320
+    object bdQueryCOD_TAREFA: TFDAutoIncField
+      FieldName = 'COD_TAREFA'
+      Origin = 'COD_TAREFA'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      IdentityInsert = True
     end
     object bdQueryNOME: TStringField
       FieldName = 'NOME'
       Origin = 'NOME'
-      Size = 50
+      Size = 30
     end
-    object bdQueryDIREITO: TStringField
-      FieldName = 'DIREITO'
-      Origin = 'DIREITO'
+    object bdQueryTIPO: TStringField
+      FieldName = 'TIPO'
+      Origin = 'TIPO'
       FixedChar = True
       Size = 1
     end
-    object bdQuerySENHA: TStringField
-      FieldName = 'SENHA'
-      Origin = 'SENHA'
-      Size = 12
-    end
   end
   inherited bdTransaction: TFDTransaction
-    Left = 544
+    Left = 568
+    Top = 336
   end
-  object dsUsuario: TDataSource
+  object dsTarefas: TDataSource
     DataSet = bdQuery
-    Left = 424
+    Left = 464
     Top = 328
   end
 end

@@ -1,13 +1,7 @@
 inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
   TextHeight = 15
-  inherited Panel1: TPanel
-    ExplicitTop = 349
-    ExplicitWidth = 626
-  end
   inherited Panel2: TPanel
-    ExplicitWidth = 626
-    ExplicitHeight = 349
     object Label1: TLabel
       Left = 16
       Top = 40
@@ -219,9 +213,6 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Origin = 'SENHA'
       Size = 12
     end
-  end
-  inherited bdTransaction: TFDTransaction
-    Left = 544
   end
   object dsUsuario: TDataSource
     DataSet = bdQuery

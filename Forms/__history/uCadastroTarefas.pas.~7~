@@ -44,16 +44,16 @@ procedure TfrmCadastroTarefas.btnSalvarClick(Sender: TObject);
 begin
   case comboTipo.ItemIndex of
     0:
-      bdQueryTIPO.AsString := 'D';
+      editTipo.Text := 'D';
     1:
-     bdQueryTIPO.AsString := 'S';
+      editTipo.Text := 'S';
     2:
-      bdQueryTIPO.AsString := 'Q';
+      editTipo.Text := 'Q';
     3:
-     bdQueryTIPO.AsString := 'M';
+      editTipo.Text := 'M';
   end;
   inherited;
-   ShowMessage('Tarefa cadastrada com sucesso!');
+
 end;
 
 procedure TfrmCadastroTarefas.SpeedButton1Click(Sender: TObject);

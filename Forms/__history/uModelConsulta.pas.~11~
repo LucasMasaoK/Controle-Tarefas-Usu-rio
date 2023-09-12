@@ -23,8 +23,8 @@ type
     btnLimpar: TBitBtn;
     btnIncluir: TBitBtn;
     bdQuery: TFDQuery;
-    dsQuery: TDataSource;
     bdTransaction: TFDTransaction;
+    dsQuery: TDataSource;
     procedure btnSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
