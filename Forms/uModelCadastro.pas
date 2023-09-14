@@ -66,14 +66,15 @@ end;
 
 procedure TfrmModelCadastro.btnSalvarClick(Sender: TObject);
 begin
-  DataModule1.conexaoBD.Commit;
   bdQuery.post;
+  DataModule1.conexaoBD.Commit;
+
 end;
 
 procedure TfrmModelCadastro.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  if DataModule1.conexaoBD.InTransaction then
+  if DataModule1.conexaoBD.InTransaction=true then
   begin
     if MessageDlg('Deseja sair sem salvar?', TMsgDlgType.mtConfirmation,
       [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo], 0) = mrYes then
@@ -88,7 +89,7 @@ end;
   procedure TfrmModelCadastro.FormShow(Sender: TObject);
   begin
     bdQuery.Active := true;
-    bdQuery.Edit;
+    //bdQuery.Edit;
     if DataModule1.usuarioTipo <> 'S' then
     begin
       btnSalvar.Enabled := false;

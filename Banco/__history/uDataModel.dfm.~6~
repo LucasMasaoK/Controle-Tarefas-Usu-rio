@@ -50,8 +50,8 @@ object DataModule1: TDataModule1
     Top = 280
   end
   object bdTransaction: TFDTransaction
+    Options.AutoStop = False
     Options.DisconnectAction = xdRollback
-    Options.EnableNested = False
     Connection = conexaoBD
     Left = 264
     Top = 320

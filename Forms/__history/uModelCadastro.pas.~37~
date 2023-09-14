@@ -42,8 +42,6 @@ implementation
 
 {$R *.dfm}
 
-
-
 procedure TfrmModelCadastro.btnExcluirClick(Sender: TObject);
 begin
   if MessageDlg('Deseja exccluir o cadastro da tarefa?',
@@ -68,34 +66,38 @@ end;
 
 procedure TfrmModelCadastro.btnSalvarClick(Sender: TObject);
 begin
+  bdQuery.post;
   DataModule1.conexaoBD.Commit;
+
 end;
 
 procedure TfrmModelCadastro.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-if DataModule1.conexaoBD.InTransaction then
-begin
-if MessageDlg('Deseja sair sem salvar?',TMsgDlgType.mtConfirmation,[TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],0)=mrYes then
-begin
-  DataModule1.conexaoBD.Rollback;
-end;
-
-  bdQuery.Close;
-end;
-
-procedure TfrmModelCadastro.FormShow(Sender: TObject);
-begin
-  bdQuery.Active := true;
-  bdQuery.Edit;
-  if DataModule1.usuarioTipo<>'S' then
+  if DataModule1.conexaoBD.InTransaction then
   begin
-  btnSalvar.Enabled:=false;
-  btnExcluir.Enabled:=false;
-  btnLimpar.Enabled:=false;
-  btnNovo.Enabled:=false;
-  end;
+    if MessageDlg('Deseja sair sem salvar?', TMsgDlgType.mtConfirmation,
+      [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo], 0) = mrYes then
+    begin
+      DataModule1.conexaoBD.Rollback;
+    end;
 
+    bdQuery.Close;
+  end;
 end;
+
+  procedure TfrmModelCadastro.FormShow(Sender: TObject);
+  begin
+    bdQuery.Active := true;
+    bdQuery.Edit;
+    if DataModule1.usuarioTipo <> 'S' then
+    begin
+      btnSalvar.Enabled := false;
+      btnExcluir.Enabled := false;
+      btnLimpar.Enabled := false;
+      btnNovo.Enabled := false;
+    end;
+
+  end;
 
 end.

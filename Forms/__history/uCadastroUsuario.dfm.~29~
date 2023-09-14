@@ -1,16 +1,22 @@
 inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
+  ClientHeight = 442
+  ClientWidth = 628
   TextHeight = 15
+  inherited Panel1: TPanel
+    Top = 360
+    Width = 628
+  end
   inherited Panel2: TPanel
-    ExplicitLeft = 24
-    ExplicitTop = 8
+    Width = 628
+    Height = 360
     object Label1: TLabel
       Left = 16
       Top = 40
       Width = 39
       Height = 15
       Caption = 'Codigo'
-      FocusControl = DBEdit1
+      FocusControl = editID
     end
     object Label2: TLabel
       Left = 16
@@ -18,7 +24,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Width = 33
       Height = 15
       Caption = 'Nome'
-      FocusControl = DBEdit2
+      FocusControl = editNome
     end
     object Label3: TLabel
       Left = 16
@@ -119,7 +125,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
         FF00FFFFFF00}
       OnClick = SpeedButton1Click
     end
-    object DBEdit1: TDBEdit
+    object editID: TDBEdit
       Left = 16
       Top = 59
       Width = 40
@@ -129,7 +135,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Enabled = False
       TabOrder = 1
     end
-    object DBEdit2: TDBEdit
+    object editNome: TDBEdit
       Left = 16
       Top = 104
       Width = 500
@@ -153,9 +159,9 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Top = 200
       Width = 184
       Height = 23
-      EditLabel.Width = 102
+      EditLabel.Width = 93
       EditLabel.Height = 15
-      EditLabel.Caption = 'editConfirmaSenha'
+      EditLabel.Caption = 'Confirme a senha'
       PasswordChar = '*'
       TabOrder = 4
       Text = ''
@@ -197,7 +203,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       AutoGenerateValue = arAutoInc
       FieldName = 'COD_USUARIO'
       Origin = 'COD_USUARIO'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ProviderFlags = [pfInWhere, pfInKey]
     end
     object bdQueryNOME: TStringField
       FieldName = 'NOME'
@@ -215,9 +221,6 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       Origin = 'SENHA'
       Size = 12
     end
-  end
-  inherited bdTransaction: TFDTransaction
-    Left = 544
   end
   object dsUsuario: TDataSource
     DataSet = bdQuery

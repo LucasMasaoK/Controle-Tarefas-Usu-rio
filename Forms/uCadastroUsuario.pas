@@ -57,7 +57,7 @@ editDireito.Text:='P';
 end;
 
   inherited;
-
+ ShowMessage('Usuário cadastrado com Sucesso!');
 end;
 
 procedure TfrmCadastroUsuario.editConfirmaSenhaExit(Sender: TObject);
