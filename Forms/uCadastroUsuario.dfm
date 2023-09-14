@@ -1,7 +1,15 @@
 inherited frmCadastroUsuario: TfrmCadastroUsuario
   Caption = 'Cadastro de Usuario'
+  ClientHeight = 442
+  ClientWidth = 628
   TextHeight = 15
+  inherited Panel1: TPanel
+    Top = 360
+    Width = 628
+  end
   inherited Panel2: TPanel
+    Width = 628
+    Height = 360
     object Label1: TLabel
       Left = 16
       Top = 40
@@ -195,7 +203,7 @@ inherited frmCadastroUsuario: TfrmCadastroUsuario
       AutoGenerateValue = arAutoInc
       FieldName = 'COD_USUARIO'
       Origin = 'COD_USUARIO'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ProviderFlags = [pfInWhere, pfInKey]
     end
     object bdQueryNOME: TStringField
       FieldName = 'NOME'

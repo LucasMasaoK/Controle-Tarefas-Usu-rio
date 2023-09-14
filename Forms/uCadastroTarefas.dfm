@@ -1,7 +1,15 @@
 inherited frmCadastroTarefas: TfrmCadastroTarefas
   Caption = 'Cadastro de Tarefas'
+  ExplicitWidth = 642
+  ExplicitHeight = 467
   TextHeight = 15
+  inherited Panel1: TPanel
+    ExplicitTop = 338
+    ExplicitWidth = 624
+  end
   inherited Panel2: TPanel
+    ExplicitWidth = 624
+    ExplicitHeight = 338
     object Codigo: TLabel
       Left = 24
       Top = 32
@@ -164,8 +172,7 @@ inherited frmCadastroTarefas: TfrmCadastroTarefas
     object bdQueryCOD_TAREFA: TFDAutoIncField
       FieldName = 'COD_TAREFA'
       Origin = 'COD_TAREFA'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      IdentityInsert = True
+      ProviderFlags = [pfInWhere, pfInKey]
     end
     object bdQueryNOME: TStringField
       FieldName = 'NOME'

@@ -67,6 +67,7 @@ end;
 procedure TfrmModelCadastro.btnSalvarClick(Sender: TObject);
 begin
   DataModule1.conexaoBD.Commit;
+  bdQuery.post;
 end;
 
 procedure TfrmModelCadastro.FormClose(Sender: TObject;

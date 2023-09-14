@@ -2,8 +2,8 @@ object frmModelCadastro: TfrmModelCadastro
   Left = 0
   Top = 0
   Caption = 'Cadastro de '
-  ClientHeight = 442
-  ClientWidth = 628
+  ClientHeight = 431
+  ClientWidth = 626
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,13 +16,11 @@ object frmModelCadastro: TfrmModelCadastro
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 360
-    Width = 628
+    Top = 349
+    Width = 626
     Height = 82
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 349
-    ExplicitWidth = 626
     object btnSalvar: TBitBtn
       Left = 163
       Top = 24
@@ -71,12 +69,10 @@ object frmModelCadastro: TfrmModelCadastro
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 628
-    Height = 360
+    Width = 626
+    Height = 349
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 626
-    ExplicitHeight = 349
   end
   object bdQuery: TFDQuery
     Connection = DataModule1.conexaoBD
