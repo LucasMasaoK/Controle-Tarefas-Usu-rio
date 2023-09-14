@@ -10,6 +10,7 @@ object DataModule1: TDataModule1
       'CharacterSet=WIN1252'
       'DriverID=FB')
     Connected = True
+    Transaction = bdTransaction
     Left = 241
     Top = 233
   end
@@ -47,5 +48,12 @@ object DataModule1: TDataModule1
     DataSet = bdLogin
     Left = 448
     Top = 280
+  end
+  object bdTransaction: TFDTransaction
+    Options.AutoStop = False
+    Options.DisconnectAction = xdRollback
+    Connection = conexaoBD
+    Left = 264
+    Top = 320
   end
 end

@@ -80,12 +80,13 @@ object frmModelCadastro: TfrmModelCadastro
   end
   object bdQuery: TFDQuery
     Connection = DataModule1.conexaoBD
+    Transaction = DataModule1.bdTransaction
     Left = 488
     Top = 328
   end
   object bdTransaction: TFDTransaction
     Connection = DataModule1.conexaoBD
-    Left = 528
-    Top = 328
+    Left = 536
+    Top = 320
   end
 end

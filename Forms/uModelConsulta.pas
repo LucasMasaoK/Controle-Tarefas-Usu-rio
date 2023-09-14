@@ -24,7 +24,6 @@ type
     btnIncluir: TBitBtn;
     bdQuery: TFDQuery;
     dsQuery: TDataSource;
-    bdTransaction: TFDTransaction;
     procedure btnSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private

@@ -113,17 +113,13 @@ object frmModelConsulta: TfrmModelConsulta
   end
   object bdQuery: TFDQuery
     Connection = DataModule1.conexaoBD
+    Transaction = DataModule1.bdTransaction
     Left = 456
     Top = 328
   end
   object dsQuery: TDataSource
     DataSet = bdQuery
     Left = 392
-    Top = 328
-  end
-  object bdTransaction: TFDTransaction
-    Connection = DataModule1.conexaoBD
-    Left = 528
     Top = 328
   end
 end

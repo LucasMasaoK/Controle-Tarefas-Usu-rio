@@ -19,6 +19,7 @@ type
     bdLoginNOME: TStringField;
     bdLoginDIREITO: TStringField;
     bdLoginSENHA: TStringField;
+    bdTransaction: TFDTransaction;
   private
     { Private declarations }
   public

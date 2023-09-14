@@ -2,7 +2,6 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
   Caption = 'Cadastro de Tarefas'
   TextHeight = 15
   inherited Panel1: TPanel
-    ExplicitWidth = 626
     object btnConsultaUsuario: TSpeedButton [0]
       Left = 47
       Top = 31
@@ -182,6 +181,7 @@ inherited frmCadastroTarefaXUsuario: TfrmCadastroTarefaXUsuario
   end
   object bdComand: TFDCommand
     Connection = DataModule1.conexaoBD
+    Transaction = DataModule1.bdTransaction
     CommandText.Strings = (
       'INSERT INTO USUARIO_TAREFA VALUES( :pCodUsuario, :pCodTarefa)')
     ParamData = <
